@@ -11,7 +11,7 @@ var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" 
 var app = express();
 //Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://mongodb6:27017/local_library'; //'mongodb://root:example@mongodb:27017'; //if not using docker may be "localhost:27017/dbname."
+const mongoDB = 'mongodb://mongodb6:27017/film_fest'; //'mongodb://root:example@mongodb:27017'; //if not using docker may be "localhost:27017/dbname."
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, { 
   useNewUrlParser: true, 
