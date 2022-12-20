@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='Film') Film:
+      select#Film.form-control(type='select' placeholder='Select Film' name='Film' required='true')
+        - Film_list.sort(function(a, b) {let textA = a.title.toUpperCase(); let textB = b.title.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+        for Film in Film_list
+          if Filminstance
+            option(value=Film._id selected=(Filminstance.Film.toString()==Film._id.toString() ? 'selected' : false)) #{Film.title}
+          else
+            option(value=Film._id) #{Film.title}
+        
+    div.form-group
+      label(for='Location') Imprint:
+      input#imprint.form-control(type='text' placeholder='Location' name='location' required='true' value=(undefined===Filminstance ? '' : Filminstance.location))
+    div.form-group
+      label(for='date') Date when Film showing:
+      input#due_back.form-control(type='date' name='date' value=(undefined===Filminstance ? '' : Filminstance.date))
+            
+    div.form-group
+      label(for='status') Status:
+      select#status.form-control(type='select' placeholder='Select status' name='status' required='true')
+        option(value='Low Tickets') Low Tickets
+        option(value='Available') Available
+        option(value='Sold Out') Sold Out
+        option(value='VIP Showing') VIP Showing
+
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

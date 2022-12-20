@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h1 date: #{date.name}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 films
+    
+    dl
+      each film in date_films
+        dt 
+          a(href=film.url) #{film.title}
+        dd #{film.summary}
+
+      else
+        p This date has no films

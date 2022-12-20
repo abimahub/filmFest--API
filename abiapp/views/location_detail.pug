@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+  h1 Location: #{location.name}
+  p #{location.street1} - #{location.suburb}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Films
+    
+    dl
+      each film in location_films
+        dt 
+          a(href=film.url) #{film.title}
+        dd #{film.blurb}
+
+      else
+        p This location currently has no films showing.
+  hr
+  p
+    a(href=location.url+'/delete') Delete location             

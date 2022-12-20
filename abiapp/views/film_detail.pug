@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1 Title: #{Film.title}
+  
+  p #[strong Blurb:] #{film.blurb}
+  p #[strong Year of Release:] #{film.isbn}
+  p #[strong imdbId:] #{film.imdbId}
+  p #[strong imdbRating:] #{film.imdbRating}
+  p #[strong imdbVotes:] #{film.imdbVotes}
+  p #[strong poster:] #{film.poster}
+  p #[strong imdbLink:] #{film.imdbLink}
+  
+  p #[strong Date:]&nbsp;
+    each val, index in film.date
+      a(href=val.url) #{val.name}
+      if index < film.date.length - 1
+        |, 
+  
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Screenings
+    
+    each val in film_instances
+      hr
+      if val.status=='Available'
+        p.text-success #{val.status}
+      else if val.status=='Sold Out'
+        p.text-danger #{val.status}
+      else
+        p.text-warning #{val.status} 
+      p #[strong Imprint:] #{val.imprint}
+      
+      if val.status!='Available'
+        p #[strong Location:] #{val.location.name}
+        p #[strong Id:]&nbsp;
+        a(href=val.url) #{val._id}
+      
+      else
+        p There are currently no showings of this film.
+
+  hr
+  p 
+    a(href=film.url+'/delete') Delete film
+  p 
+    a(href=film.url+'/update') Update film
