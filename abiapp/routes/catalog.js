@@ -1,117 +1,117 @@
-var express = require('express');
+var express = require('express');      //file lives in routes folder
 var router = express.Router();
 
 // Require controller modules.
-var book_controller = require('../controllers/bookController');
-var author_controller = require('../controllers/authorController');
-var genre_controller = require('../controllers/genreController');
-var book_instance_controller = require('../controllers/bookinstanceController');
+var film_controller = require('../controllers/filmController');
+var location_controller = require('../controllers/locationController');
+var date_controller = require('../controllers/dateController');
+var film_instance_controller = require('../controllers/filminstanceController');
 
-/// BOOK ROUTES ///
+/// film ROUTES ///
 
 // GET catalog home page.
-router.get('/', book_controller.index);
+router.get('/', film_controller.index);
 
-// GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
-router.get('/book/create', book_controller.book_create_get);
+// GET request for creating a film. NOTE This must come before routes that display film (uses id).
+router.get('/film/create', film_controller.film_create_get);
 
-// POST request for creating Book.
-router.post('/book/create', book_controller.book_create_post);
+// POST request for creating film.
+router.post('/film/create', film_controller.film_create_post);
 
-// GET request to delete Book.
-router.get('/book/:id/delete', book_controller.book_delete_get);
+// GET request to delete film.
+router.get('/film/:id/delete', film_controller.film_delete_get);
 
-// POST request to delete Book.
-router.post('/book/:id/delete', book_controller.book_delete_post);
+// POST request to delete film.
+router.post('/film/:id/delete', film_controller.film_delete_post);
 
-// GET request to update Book.
-router.get('/book/:id/update', book_controller.book_update_get);
+// GET request to update film.
+router.get('/film/:id/update', film_controller.film_update_get);
 
-// POST request to update Book.
-router.post('/book/:id/update', book_controller.book_update_post);
+// POST request to update film.
+router.post('/film/:id/update', film_controller.film_update_post);
 
-// GET request for one Book.
-router.get('/book/:id', book_controller.book_detail);
+// GET request for one film.
+router.get('/film/:id', film_controller.film_detail);
 
-// GET request for list of all Book items.
-router.get('/books', book_controller.book_list);
+// GET request for list of all film items.
+router.get('/films', film_controller.film_list);
 
-/// AUTHOR ROUTES ///
+/// location ROUTES ///
 
-// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
-router.get('/author/create', author_controller.author_create_get);
+// GET request for creating location. NOTE This must come before route for id (i.e. display location).
+router.get('/location/create', location_controller.location_create_get);
 
-// POST request for creating Author.
-router.post('/author/create', author_controller.author_create_post);
+// POST request for creating location.
+router.post('/location/create', location_controller.location_create_post);
 
-// GET request to delete Author.
-router.get('/author/:id/delete', author_controller.author_delete_get);
+// GET request to delete location.
+router.get('/location/:id/delete', location_controller.location_delete_get);
 
-// POST request to delete Author.
-router.post('/author/:id/delete', author_controller.author_delete_post);
+// POST request to delete location.
+router.post('/location/:id/delete', location_controller.location_delete_post);
 
-// GET request to update Author.
-router.get('/author/:id/update', author_controller.author_update_get);
+// GET request to update location.
+router.get('/location/:id/update', location_controller.location_update_get);
 
-// POST request to update Author.
-router.post('/author/:id/update', author_controller.author_update_post);
+// POST request to update location.
+router.post('/location/:id/update', location_controller.location_update_post);
 
-// GET request for one Author.
-router.get('/author/:id', author_controller.author_detail);
+// GET request for one location.
+router.get('/location/:id', location_controller.location_detail);
 
 // GET request for list of all Authors.
-router.get('/authors', author_controller.author_list);
+router.get('/locations', location_controller.location_list);
 
-/// GENRE ROUTES ///
+/// date ROUTES ///
 
-// GET request for creating a Genre. NOTE This must come before route that displays Genre (uses id).
-router.get('/genre/create', genre_controller.genre_create_get);
+// GET request for creating a date. NOTE This must come before route that displays date (uses id).
+router.get('/date/create', date_controller.date_create_get);
 
-//POST request for creating Genre.
-router.post('/genre/create', genre_controller.genre_create_post);
+//POST request for creating date.
+router.post('/date/create', date_controller.date_create_post);
 
-// GET request to delete Genre.
-router.get('/genre/:id/delete', genre_controller.genre_delete_get);
+// GET request to delete date.
+router.get('/date/:id/delete', date_controller.date_delete_get);
 
-// POST request to delete Genre.
-router.post('/genre/:id/delete', genre_controller.genre_delete_post);
+// POST request to delete date.
+router.post('/date/:id/delete', date_controller.date_delete_post);
 
-// GET request to update Genre.
-router.get('/genre/:id/update', genre_controller.genre_update_get);
+// GET request to update date.
+router.get('/date/:id/update', date_controller.date_update_get);
 
-// POST request to update Genre.
-router.post('/genre/:id/update', genre_controller.genre_update_post);
+// POST request to update date.
+router.post('/date/:id/update', date_controller.date_update_post);
 
-// GET request for one Genre.
-router.get('/genre/:id', genre_controller.genre_detail);
+// GET request for one date.
+router.get('/date/:id', date_controller.date_detail);
 
-// GET request for list of all Genre.
-router.get('/genres', genre_controller.genre_list);
+// GET request for list of all date.
+router.get('/dates', date_controller.date_list);
 
-/// BOOKINSTANCE ROUTES ///
+/// filminstance ROUTES ///
 
-// GET request for creating a BookInstance. NOTE This must come before route that displays BookInstance (uses id).
-router.get('/bookinstance/create', book_instance_controller.bookinstance_create_get);
+// GET request for creating a filminstance. NOTE This must come before route that displays filminstance (uses id).
+router.get('/filminstance/create', film_instance_controller.filminstance_create_get);
 
-// POST request for creating BookInstance. 
-router.post('/bookinstance/create', book_instance_controller.bookinstance_create_post);
+// POST request for creating filminstance. 
+router.post('/filminstance/create', film_instance_controller.filminstance_create_post);
 
-// GET request to delete BookInstance.
-router.get('/bookinstance/:id/delete', book_instance_controller.bookinstance_delete_get);
+// GET request to delete filminstance.
+router.get('/filminstance/:id/delete', film_instance_controller.filminstance_delete_get);
 
-// POST request to delete BookInstance.
-router.post('/bookinstance/:id/delete', book_instance_controller.bookinstance_delete_post);
+// POST request to delete filminstance.
+router.post('/filminstance/:id/delete', film_instance_controller.filminstance_delete_post);
 
-// GET request to update BookInstance.
-router.get('/bookinstance/:id/update', book_instance_controller.bookinstance_update_get);
+// GET request to update filminstance.
+router.get('/filminstance/:id/update', film_instance_controller.filminstance_update_get);
 
-// POST request to update BookInstance.
-router.post('/bookinstance/:id/update', book_instance_controller.bookinstance_update_post);
+// POST request to update filminstance.
+router.post('/filminstance/:id/update', film_instance_controller.filminstance_update_post);
 
-// GET request for one BookInstance.
-router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
+// GET request for one filminstance.
+router.get('/filminstance/:id', film_instance_controller.filminstance_detail);
 
-// GET request for list of all BookInstance.
-router.get('/bookinstances', book_instance_controller.bookinstance_list);
+// GET request for list of all filminstance.
+router.get('/filminstances', film_instance_controller.filminstance_list);
 
 module.exports = router;

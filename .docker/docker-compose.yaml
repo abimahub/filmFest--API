@@ -37,7 +37,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: local_library  #remember to change this to whatever your db is called
+      MONGO_INITDB_DATABASE: film_fest  #remember to change this to whatever your db is called
     volumes:
     - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks: 
@@ -56,7 +56,7 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_AUTH_USERNAME: root
       ME_CONFIG_MONGODB_AUTH_PASSWORD: example
-      ME_CONFIG_MONGODB_AUTH_DATABASE: local_library
+      ME_CONFIG_MONGODB_AUTH_DATABASE: film_fest
       MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_PORT: 27017
