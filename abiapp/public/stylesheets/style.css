@@ -1,11 +1,53 @@
-body {
+body, i {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'ebrima', 'magneto', sans-serif !important;
+  font-size: 1.5rem;
+text-align: center;
+}
+h1 {
+font-family: 'magneto', cursive !important;
+font-size:3em;
+}
+h2{
+font-family: 'magneto', cursive !important;
+font-size:2.5em;
+}
+h3, h4, p{
+font-family: 'ebrima', sans-serif !important;
+}	
+a:link, a:visited {
+color: #0d6efd;  /* primary */
+text-decoration: none;
 }
 
-a {
-  color: #00B7FF;
+a:link:active, a:visited:active {
+color:	#FFF;  /*white */
+}	
+
+
+nav {
+  font-size: 1.5em;
+} 
+/* marks the current active page by putting a border around the navbar link */
+
+#searchbox  {
+background-color: #f8f9fa; /*light*/
+  display: inline-block;
+  box-shadow: none;
 }
+
+.button:hover, #navact:hover, #searchbox:hover{
+background-color: #696969;  /*dimgrey */
+  color: #f8f9fa; /*light*/
+}
+
+.button:active {
+background-color: #663399; /* rebeccapurple */
+color: #f8f9fa; /*light*/
+box-shadow: 0 5px #663399; /* rebeccapurple */
+transform: translateY(4px);
+}	
+
 .sidebar-nav {
   margin-top: 20px;
   padding: 0;
