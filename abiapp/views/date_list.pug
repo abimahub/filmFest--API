@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each date in date_list
+      li 
+        a(href=date.url) #{date.name} 
+        | 
+
+    else
+      li There are no dates

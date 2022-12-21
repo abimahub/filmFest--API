@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  h1 ID: #{filminstance._id}
+  
+  p #[strong Title:] 
+    a(href=filminstance.film.url) #{filminstance.film.title}
+  p #[strong Imprint:] #{filminstance.imprint}
+
+  p #[strong Status:] 
+    if filminstance.status=='Available'
+      span.text-success #{filminstance.status}
+    else if filminstance.status=='Sold Out'
+      span.text-danger #{filminstance.status}
+    else
+      span.text-warning #{filminstance.status} 
+      
+    if filminstance.status!='Available'
+    p #[strong Location:] #{filminstance.location.name}
+//-    p #[strong Due back:] #{filminstance.due_back} 

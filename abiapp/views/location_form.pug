@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Cinema Name:
+      input#name.form-control(type='text' placeholder='Cinema name' name='name' required='true' value=(undefined===location ? '' : location.name) )
+      label(for='street1') street1:
+      input#street1.form-control(type='text' placeholder='street1' name='street1' required='true' value=(undefined===location ? '' : location.street1))
+      label(for='street2') street2:
+     input#street2.form-control(type='text' placeholder='street2' name='street2' required='true' value=(undefined===location ? '' : location.street2))
+        label(for='suburb') suburb:
+       input#suburb.form-control(type='text' placeholder='suburb' name='suburb' required='true' value=(undefined===location ? '' : location.suburb))
+        label(for='state') state:
+       input#state.form-control(type='text' placeholder='state' name='state' required='true' value=(undefined===location ? '' : location.state))
+        label(for='postcode') postcode:
+       input#postcode.form-control(type='text' placeholder='postcode' name='postcode' required='true' value=(undefined===location ? '' : location.postcode))
+    
+    div.form-group
+      label(for='latitude') Latitude:
+      input#latitude.form-control(type='decimal' name='latitude' value=(undefined===location ? '' : location.latitude) )
+    div.form-group
+      label(for='longitude') Longitude:
+      input#longitude.form-control(type='decimal' name='longitude' value=(undefined===location ? '' : location.longitude) )  
+    button.btn.btn-primary(type='submit') Submit
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
