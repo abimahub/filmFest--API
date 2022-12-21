@@ -19,7 +19,7 @@ services:
     # Docker does not allow you to have two containers using the same name, 
     # this can be achieved by adding a version number to the container names:
     # mongodb4, mongo-express4, server4.
-    container_name: server6  #
+    container_name: serverAPI  #
     ports:
     - 3001:3001
     environment:
@@ -33,7 +33,7 @@ services:
   mongodb:
     image: mongo:5.0
     restart: always
-    container_name: mongodb6
+    container_name: mongodbAPI
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -44,31 +44,6 @@ services:
       - mongo1_network
     ports: 
       - 27017:27017
-
-  mongo-express:
-    image: mongo-express:0.54.0
-    restart: always
-    container_name: mongo-express6
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_AUTH_USERNAME: root
-      ME_CONFIG_MONGODB_AUTH_PASSWORD: example
-      ME_CONFIG_MONGODB_AUTH_DATABASE: film_fest
-      MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
-      ME_CONFIG_MONGODB_SERVER: mongodb
-      ME_CONFIG_MONGODB_PORT: 27017
-      # ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
-      ME_CONFIG_BASICAUTH_USERNAME: root
-      ME_CONFIG_BASICAUTH_PASSWORD: example
-    depends_on:
-      - mongodb  
-    networks: 
-      - mongo1_network 
-      
-
 
 networks:
   mongo1_network:
