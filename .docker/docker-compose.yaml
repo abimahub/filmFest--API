@@ -37,7 +37,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: film_fest  #remember to change this to whatever your db is called
+      MONGO_INITDB_DATABASE: film_fest
     volumes:
     - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks: 

@@ -15,7 +15,7 @@ const mongoDB = 'mongodb://mongodb6:27017/film_fest';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, { 
   useNewUrlParser: true, 
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
   auth: {     
     username: "root",     
     password: "example"  

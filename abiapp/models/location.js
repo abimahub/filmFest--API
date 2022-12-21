@@ -10,8 +10,8 @@ var LocationSchema = new Schema(
 	suburb: {type: String, required: true, max: 100},
 	state: {type: String, required: true, max: 100},
 	postcode: {type: String, required: true, max: 100},
-    latitude: {type:Decimal(8,6)},
-    longitude: {type:Decimal(9,6)},
+  latitude: {type:Integer, max: 15},
+    longitude: {type:Integer, max: 16} 
   }      //above variables for use with cinemas.json seed file
 );
 
