@@ -1,5 +1,6 @@
 var express = require('express');      //file lives in routes folder
 var router = express.Router();
+var cors = require('cors');
 
 // Require controller modules.
 var film_controller = require('../controllers/filmController');

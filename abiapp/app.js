@@ -11,9 +11,9 @@ var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" 
 var app = express();
 //Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://mongodb6:27017/film_fest';  
+//const mongoDB = 'mongodb://mongodb6:27017/film_fest';  
 
-//const mongoDB = 'mongodb://mongodbAPI:27017/film_fest';
+const mongoDB = 'mongodb://mongodbAPI:27017/film_fest';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, { 
   useNewUrlParser: true, 
