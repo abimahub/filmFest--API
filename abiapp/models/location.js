@@ -10,14 +10,14 @@ var LocationSchema = new Schema(
 	suburb: {type: String, required: true, max: 100},
 	state: {type: String, required: true, max: 100},
 	postcode: {type: String, required: true, max: 100},
-  latitude: {type:Integer, max: 15},
-    longitude: {type:Integer, max: 16} 
+  latitude: {type: Number, max: 15},
+    longitude: {type: Number, max: 16} 
   }      //above variables for use with cinemas.json seed file
 );
 
 // Virtual for location's full name
 LocationSchema
-.virtual('name')
+.virtual('cinema')
 .get(function () {
   return this.name + ', ' + this.suburb;
 });

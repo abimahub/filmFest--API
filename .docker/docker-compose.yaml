@@ -21,7 +21,7 @@ services:
     # mongodb4, mongo-express4, server4.
     container_name: server6  #
     ports:
-    - 3000:3000
+    - 3001:3001
     environment:
       MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
     depends_on:
