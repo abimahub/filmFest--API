@@ -1,19 +1,21 @@
 body, i {
   padding: 50px;
-  font-family: 'ebrima', 'magneto', sans-serif !important;
+  font-family: 'ebrima'; src: url('/fonts/ebrima.ttf');
   font-size: 1.5rem;
 text-align: center;
 }
 h1 {
-font-family: 'magneto', cursive !important;
+  font-family: 'magneto';
+  src: url('/fonts/MAGNETOB.ttf');
 font-size:3em;
 }
 h2{
-font-family: 'magneto', cursive !important;
+  font-family: 'magneto';
+  src: url('/fonts/MAGNETOB.ttf');
 font-size:2.5em;
 }
 h3, h4, p{
-font-family: 'ebrima', sans-serif !important;
+  font-family: 'ebrima'; src: url('/fonts/ebrima.ttf');
 }	
 a:link, a:visited {
 color: #0d6efd;  /* primary */
