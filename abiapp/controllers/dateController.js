@@ -1,7 +1,11 @@
 var Date = require('../models/date');
 var Film = require('../models/film');
+var Location = require('../models/location');
+var FilmInstance = require('../models/filminstance');
+
 var async = require('async');
-const validator = require('express-validator');
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
 
 // Display list of all dates.
 exports.date_list = function(req, res) {
