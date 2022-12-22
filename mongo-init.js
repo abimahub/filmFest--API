@@ -106,10 +106,10 @@ printjson(res);
 res = [];
 
 var mylocationCursor = db.locations.find();
-var locationsArray = mylocationCursor.toArray();
+var locationsArray = myLocationCursor.toArray();
 
-var mydateCursor = db.dates.find();
-var datesArray = mydateCursor.toArray();
+var myDateCursor = db.dates.find();
+var datesArray = myDateCursor.toArray();
 
 //format: filmCreate('Title', 'blurb', 'releaseDate', 'imdbId', 'imdbRating','imdbVotes', 'poster', 'imdbLink');
 //                                    new Date('1920-01-02')
@@ -118,7 +118,7 @@ filmCreate('The Godfather', '', '1972','tt0068646', '9.2', '1106047', 'http://ia
 printjson(res);
 res = [];
 
-var myfilmCursor = db.films.find();
+var myFilmCursor = db.films.find();
 var filmsArray = myfilmCursor.toArray();
 
 //format: filmInstanceCreate(filmsArray[0]._id, 'status, location, date');

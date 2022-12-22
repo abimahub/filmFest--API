@@ -1,6 +1,6 @@
-var film = require('../models/film');
-var location = require('../models/location');
-var date = require('../models/date');
+var Film = require('../models/film');
+var Location = require('../models/location');
+var Date = require('../models/date');
 var FilmInstance = require('../models/filminstance');
 
 var async = require('async');
@@ -31,7 +31,7 @@ exports.index = function(req, res) {
 };
 
 // Display list of all films.
-exports.film_list = function(req, res) {
+exports.film_list = function(req, res, next) {
     Film.find({}, 'title location')
       .populate('location')
       .exec(function (err, list_films) {
@@ -42,7 +42,7 @@ exports.film_list = function(req, res) {
 };
 
 // Display detail page for a specific film.
-exports.film_detail = function(req, res) {
+exports.film_detail = function(req, res, next) {
     async.parallel({
         film: function(callback) {
 
@@ -69,7 +69,7 @@ exports.film_detail = function(req, res) {
 };
 
 // Display film create form on GET.
-exports.film_create_get = function(req, res) {
+exports.film_create_get = function(req, res, next) {
     async.parallel({
         locations: function(callback) {
             Location.find(callback);
@@ -166,7 +166,7 @@ exports.film_delete_post = function(req, res) {
 };
 
 // Display film update form on GET.
-exports.film_update_get = function(req, res) {
+exports.film_update_get = function(req, res, next) {
     async.parallel({
         film: function(callback) {
             Film.findById(req.params.id).populate('location').populate('date').exec(callback);
@@ -198,6 +198,7 @@ exports.film_update_get = function(req, res) {
 
 // Handle film update on POST.
 exports.film_update_post = [
+    
     (req, res, next) => {
         if(!(req.body.date instanceof Array)){
             if(typeof req.body.date==='undefined')

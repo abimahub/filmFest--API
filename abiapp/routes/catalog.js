@@ -8,6 +8,8 @@ var location_controller = require('../controllers/locationController');
 var date_controller = require('../controllers/dateController');
 var film_instance_controller = require('../controllers/filminstanceController');
 
+router.use(cors());
+
 /// film ROUTES ///
 
 // GET catalog home page.
