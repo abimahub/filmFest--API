@@ -13,7 +13,7 @@ var app = express();
 const mongoose = require('mongoose');
 //const mongoDB = 'mongodb://mongodb6:27017/film_fest';  
 
-const mongoDB = 'mongodb://mongodbAPI:27017/film_fest';
+const mongoDB = 'mongodb://root:example@mongodbAPI@localhost:27017/film_fest';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, { 
   useNewUrlParser: true, 
