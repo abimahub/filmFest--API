@@ -6,7 +6,7 @@ var FilmSchema = new Schema(
   {
     title: {type: String, required: true},
     blurb: {type: String, required: true},
-    year: {type: String, required: true},
+    releaseYear: {type: String, required: true},
 	imdbId:{type: Number, required: true},
 	imdbRating:{type: Number, required: true},
 	imdbVotes:{type: Number, required: true},
